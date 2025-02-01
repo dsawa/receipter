@@ -1,4 +1,8 @@
-require: rubocop-rspec
+require:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
 
 # Overwrite or add rules to create your own house style
 #

@@ -22,3 +22,4 @@ repos:
     hooks:
       - id: rubocop
         args: ['--autocorrect']
+        additional_dependencies: ['rubocop-rspec']
