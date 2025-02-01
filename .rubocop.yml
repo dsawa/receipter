@@ -4,6 +4,7 @@ require:
 AllCops:
   NewCops: enable
   Exclude:
+    - 'vendor/**/*'
     - 'bin/**/*'
 
 # Overwrite or add rules to create your own house style
