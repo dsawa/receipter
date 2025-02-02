@@ -9,7 +9,7 @@ Rules that it applies to calculations:
 
 ## Running app (Printing receipts)
 
-Assuming you have txt file that represents you shopping basket, pass it like to `main.rb` file as an argument (relative path from where main.rb is placed).
+Assuming you have txt file that represents you shopping basket, pass it as an argument (relative path from where main.rb is placed). Like this: `ruby main.rb 'path/to/basket.txt'
 
 If you have more shopping baskets you can pass multiple paths to file. Example below
 for [inputs directory](./inputs).
