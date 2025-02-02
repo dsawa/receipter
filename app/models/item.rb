@@ -5,9 +5,9 @@ require_relative '../services/tax_calculator'
 class Item
   # Simple categorization based on keywords in the product name
   CATEGORY_KEYWORDS = {
-    medical: %w[pills medicine medication antibiotic bandage syrup ointment inhaler drops],
-    food: %w[chocolate candy gum chips cookie cake pie bread], # Probably should handle more :)
-    book: %w[book]
+    medical: %w[pills medicine medication antibiotic bandage syrup ointment inhaler drops].freeze,
+    food: %w[chocolate candy gum chips cookie cake pie bread].freeze, # Probably should handle more :)
+    book: %w[book].freeze
   }.freeze
 
   attr_reader :product_name, :price_in_cents
@@ -24,7 +24,7 @@ class Item
   def category
     CATEGORY_KEYWORDS.find do |_, keywords|
       keywords.any? { |keyword| product_name.downcase.include?(keyword) }
-    end&.first
+    end&.first || :other
   end
 
   def tax

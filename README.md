@@ -75,6 +75,10 @@ Total: 98.38
 bundle install
 ```
 
+### Logging
+
+To enable logging pass `DEBUG=1` environment variable when running app.
+
 ### Tests
 
 App uses [rspec](https://rspec.info) for testing.

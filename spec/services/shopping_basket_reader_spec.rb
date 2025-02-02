@@ -3,7 +3,7 @@
 require_relative '../../app/services/shopping_basket_reader'
 
 describe ShoppingBasketReader do
-  subject(:reader) { described_class.new(file_path).call }
+  subject(:reader) { described_class.new(file_path, Logger.new(nil)).call }
 
   let(:file_path) { File.join(File.dirname(__FILE__), '../support/fixtures/shopping_basket.txt') }
 
