@@ -22,6 +22,7 @@ class ProcessService
 
       logger.debug("Printing receipt for: #{file_path}")
       ReceiptPrinter.new(line_items).call
+      puts
     end
   end
 

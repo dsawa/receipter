@@ -20,7 +20,7 @@ describe ProcessService do
           "1 packet of    headache pills: 9.75\n" \
           "3 imported boxes of chocolates: 35.55\n" \
           "Sales Taxes: 17.05\n" \
-          "Total: 205.85\n"
+          "Total: 205.85\n\n"
       end
 
       it 'prints line items and summary' do
