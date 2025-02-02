@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozent_string_literal: true
-
 class ReceiptPrinter
   attr_reader :line_items
 
