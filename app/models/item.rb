@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../services/tax_calculator'
+
 class Item
   # Simple categorization based on keywords in the product name
   CATEGORY_KEYWORDS = {
