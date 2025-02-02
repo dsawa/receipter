@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'debug'
 require_relative 'app/services/shopping_basket_reader'
 require_relative 'app/services/receipt_printer'
 
