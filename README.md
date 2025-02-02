@@ -4,8 +4,10 @@ Simple Ruby application that simulates receipts printing based on inputs of shop
 
 Rules that it applies to calculations:
 
+- Assumption: items category is recognized by their product name match with basic set of rules (for example: 'sweet cake' is going to be categorized to 'food' because of 'cake' in it). Rules here inside [Item class](./app/models/item.rb)
 - Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt.
 - Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions.
+- The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the nearest 0.05) amount of sales tax.
 
 ## Running app (Printing receipts)
 
