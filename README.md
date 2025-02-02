@@ -7,6 +7,17 @@ Rules that it applies to calculations:
 - Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt.
 - Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions.
 
+## Running app (Printing receipts)
+
+Assuming you have txt file that represents you shopping basket, pass it like to `main.rb` file as an argument (relative path from where main.rb is placed).
+
+If you have more shopping baskets you can pass multiple paths to file. Example below
+for [inputs directory](./inputs).
+
+```bash
+ruby main.rb "inputs/input_1.txt" "inputs/input_2.txt" "inputs/input_3.txt"
+```
+
 ## Development
 
 ### Requirements
