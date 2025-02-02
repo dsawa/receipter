@@ -26,6 +26,6 @@ class Item
   end
 
   def tax
-    raise NotImplementedError, 'Implement Tax calculation logic'
+    TaxCalculator.new(self).call
   end
 end

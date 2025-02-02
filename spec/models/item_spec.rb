@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative '../../app/services/tax_calculator'
 require_relative '../../app/models/item'
 
 describe Item do
@@ -9,8 +10,15 @@ describe Item do
   let(:price_in_cents) { Faker::Number.number(digits: 4) }
 
   describe '#tax' do
-    it 'raises an error' do
-      expect { item.tax }.to raise_error(NotImplementedError, 'Implement Tax calculation logic')
+    let(:tax_calculator) { instance_double(TaxCalculator) }
+
+    it 'calls Tax calculator service with given item' do
+      allow(TaxCalculator).to receive(:new).with(item).and_return(tax_calculator)
+      allow(tax_calculator).to receive(:call)
+
+      item.tax
+
+      expect(tax_calculator).to have_received(:call)
     end
   end
 
