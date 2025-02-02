@@ -5,6 +5,8 @@ class ReceiptPrinter
 
   def initialize(line_items)
     @line_items = line_items
+    @total_tax = 0
+    @total = 0
   end
 
   def call
@@ -16,12 +18,18 @@ class ReceiptPrinter
 
   def print_line_items
     line_items.each do |line_item|
-      puts format("#{line_item.quantity} #{line_item.item.product_name}: %.2f", (line_item.total / 100.to_f))
+      line_item_tax = line_item.tax
+      line_item_total = line_item.total
+
+      @total_tax += line_item_tax
+      @total += line_item_total
+
+      puts format("#{line_item.quantity} #{line_item.item.product_name}: %.2f", (line_item_total / 100.to_f))
     end
   end
 
   def print_summary
-    puts format('Sales Taxes: %.2f', (line_items.sum(&:tax) / 100.to_f))
-    puts format('Total: %.2f', (line_items.sum(&:total) / 100.to_f))
+    puts format('Sales Taxes: %.2f', (@total_tax / 100.to_f))
+    puts format('Total: %.2f', (@total / 100.to_f))
   end
 end

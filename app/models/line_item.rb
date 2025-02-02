@@ -9,7 +9,7 @@ class LineItem
   end
 
   def tax
-    quantity * item.tax
+    @tax ||= quantity * item.tax
   end
 
   def total
