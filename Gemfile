@@ -10,5 +10,5 @@ group :development, :test do
   gem 'faker', '~> 3.5'
   gem 'rspec', '~> 3.13'
   gem 'rubocop', '~> 1.71', require: false
-  gem 'rubocop-rspec', '~> 3.4', require: false
+  gem 'rubocop-rspec', '~> 3.5', require: false
 end
